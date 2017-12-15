@@ -3,10 +3,19 @@ import numpy as np
 import os
 
 def _parse_function(example_proto):
+    ## update soon  parse tfrecords here
+
+def gendata(iterjson,key):
     ## update soon
+
+def gen_sub(iterjson,subkeylist):
+    ## update soon generate tfrecords online here
+    ## single-process 
+
     
-def gen_parallel(keys):
-    ## update soon
+def gen_parallel(iterjson,mainkeylist):
+    ## update soon generate tfrecords online here
+    ## multi-process
 
 if __name__=="__main__":
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -25,7 +34,7 @@ if __name__=="__main__":
         for i in range(10):
             ## generate the tfrecords
             ## update soon
-            gen_parallel(keys)
+            gen_parallel(iterjson,mainkeylist)
             ##
             sess.run(iterator.initializer)
             ## read the generated tfrecords file
